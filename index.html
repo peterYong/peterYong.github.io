@@ -80,10 +80,10 @@
 <p>C、JQuery的优点:小巧、方便、功能强大。插件丰富、开源、免费。</p>
 <p>D、VS在VS2010中已经实现自动完成功能，VS2008需要安装VSSP1补丁和VS90SP1-KB958502-X86补丁才能更好的支持，然后引用jquery-1.4.1.js，jquery-1.4.1-vsdoc.js放在同目录下，VS2008中才会有自动提示和自动完成功能。</p>
 <p>E、JQuery文件说明:</p>
-<pre><code><span class="tag">jquery-1</span><span class="class">.4</span><span class="class">.2</span><span class="class">.js</span>是<span class="tag">JQuery</span>主文件。
-<span class="tag">jquery-1</span><span class="class">.4</span><span class="class">.2</span><span class="class">.min</span><span class="class">.js</span>是压缩板<span class="tag">JQuery</span>主文件。
-<span class="tag">jquery-1</span><span class="class">.4</span><span class="class">.2-vsdoc</span><span class="class">.js</span>是<span class="tag">JQuery</span>在<span class="tag">VS</span>中的自动提示功能。
-</code></pre><h1 id="2、JQuery之Ready">2、JQuery之Ready</h1><p>A、JQuery的ready和Dom onload的区别:onload是所有Dom元素创建完毕触发，而ready则是Dom元素创建完就触发，这样可以提高网页的响应速度。这两个看似一样的功能，但实际有很大的区别：</p>
+<p>   jquery-1.4.2.js是JQuery主文件。</p>
+<p>   jquery-1.4.2.min.js是压缩板JQuery主文件。</p>
+<p>   jquery-1.4.2-vsdoc.js是JQuery在VS中的自动提示功能。</p>
+<h1 id="2、JQuery之Ready">2、JQuery之Ready</h1><p>A、JQuery的ready和Dom onload的区别:onload是所有Dom元素创建完毕触发，而ready则是Dom元素创建完就触发，这样可以提高网页的响应速度。这两个看似一样的功能，但实际有很大的区别：</p>
 <p>onload不仅在创建DOM树之后，而且在所有外部资源全部加载完毕，并且整个页面在浏览器窗口中显示完毕之后，才会执行。这些资源不仅包括图片资源，而且包括嵌入在页面上的flash视频，如果图片或者flash过多，那么会一段很长加载时间，也就意味这延迟执行代码块的时间会更多。</p>
 <p>jQuery中的ready()方法只需要等待文档结构被完全解析并且浏览器已经把HTML转化为DOM树后就会执行代码块，这里注意的是仅仅是DOM，网页中的图片，flash等外部资源都毫无关联。</p>
 <p>由此可见jQuery中的ready()方法将缩短等待时间。在jQuery中也可以用$(window).load()来实现onload那种事件调用的时机。</p>
@@ -118,14 +118,11 @@ $.<span class="built_in">each</span>(dict, function(<span class="built_in">key</
 <pre><code>$(“.text”).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{alert($(<span class="keyword">this</span>).text();)});
 </code></pre><p>D、多条件选择器:$(“p,div,span.menuitem”),同时选择p标签、div标签和拥有menuitem样式的span标签。</p>
 <p>E、层次选择器:</p>
-<pre><code><span class="number">1</span>、$(“<span class="keyword">div</span> li”)获取<span class="keyword">div</span>下的所有li标签(后代，子、子的子标签…)。
-
-<span class="number">2</span>、$(“<span class="keyword">div</span> &gt; li”)获取<span class="keyword">div</span>下的直接li子标签。
-
-<span class="number">3</span>、$(“.menuitem + <span class="keyword">div</span>”)获取样式名为menuitem之后的第一个<span class="keyword">div</span>标签。（不常用）
-
-<span class="number">4</span>、$(“.menuitem ~ <span class="keyword">div</span>”)获取样式名为menuitem之后的所有<span class="keyword">div</span>标签。（不常用）
-</code></pre><p>注意:选择器表达式中的空格不能多不能少。易错！</p>
+<p>  1、$(“div li”)获取div下的所有li标签(后代，子、子的子标签…)。</p>
+<p>  2、$(“div &gt; li”)获取div下的直接li子标签。</p>
+<p>  3、$(“.menuitem + div”)获取样式名为menuitem之后的第一个div标签。（不常用）</p>
+<p>  4、$(“.menuitem ~ div”)获取样式名为menuitem之后的所有div标签。（不常用）</p>
+<p>注意:选择器表达式中的空格不能多不能少。易错！</p>
 <h2 id="4-1_基本过滤选择器">4.1 基本过滤选择器</h2><p>A、:first选择第一个标签。$(“div:first”)   选取第一个<code>&lt;div&gt;</code>。$(“.warn:first”)  第一个class=warn的标签。<br>注意：无 :second  。用下面的索引序号。</p>
 <p>B、:last选取最后一个标签。$(“div:last”)选取最后一个<code>&lt;div&gt;</code>。</p>
 <p>C、:not选取不满足选择器条件的标签。$(“input:not(.myclass)”)选取样式名(class)不是myclass的<code>&lt;input&gt;</code>标签。</p>
@@ -268,12 +265,10 @@ $(“:button[value=hide]”).click(<span class="function"><span class="keyword">
 <p>Cookie不是写入以后一定下次能读出来，浏览器可能会定期清除、用户也可能会手动清除。</p>
 <p>写到Cookie中的数据一定是可有可无的数据，像防止投票作弊就不能用Cookie。</p>
 <p>C、使用方法:</p>
-<pre><code><span class="number">1</span>、添加对jquery<span class="class">.cookie</span><span class="class">.js</span>引用。
-
-<span class="number">2</span>、设置,$.<span class="function"><span class="title">cookie</span><span class="params">(‘名字’, ‘值’)</span></span>。cookie中保存的值是文本。
-
-<span class="number">3</span>、读取,<span class="tag">var</span> v = $.<span class="function"><span class="title">cookie</span><span class="params">(‘名字’)</span></span>
-</code></pre><p>D、设置值的时候还可以指定第三个参数，</p>
+<p>   1、添加对jquery.cookie.js引用。</p>
+<p>   2、设置,$.cookie(‘名字’, ‘值’)。cookie中保存的值是文本。</p>
+<p>   3、读取,var v = $.cookie(‘名字’)</p>
+<p>D、设置值的时候还可以指定第三个参数，</p>
 <pre><code>$.cookie(‘名字’, ‘值’,{<span class="string">expires:</span><span class="number">7</span>,<span class="string">path:</span>’/’,<span class="string">domain:</span>’baidu.com’,<span class="string">secure:</span><span class="literal">true</span>});
 </code></pre><p>expires 保存的天数。如果不设定expires在浏览器关闭以后就清除，</p>
 <p>path 设置网站哪些目录下的文件可以读取。</p>
