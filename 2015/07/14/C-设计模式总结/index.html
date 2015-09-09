@@ -2,61 +2,82 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
   <title>C#设计模式总结 | 小勇blog</title>
-  <meta name="author" content="小勇">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   
-  <meta name="description" content="New Start">
+    <meta name="author" content="小勇">
   
   
-
-  <link rel="alternate" href="/atom.xml" title="小勇blog" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+    <meta name="description" content="&amp;emsp;&amp;emsp;学习C#编程也有一段时间了，对于面向对象语言编程，我认为不能不知道设计模式。下面是网上的总结佳作，拿来学习学习。原文出处： zhili 的博客（@天平Learning） 
+也可参考自己CSDN博客整理：最全设计模式导学目录（完整版），前面几篇学的是java语言的，语法上稍微与C#有点不同，于是再找到此篇文章。">
+  
+  <meta name="description" content="&amp;emsp;&amp;emsp;学习C#编程也有一段时间了，对于面向对象语言编程，我认为不能不知道设计模式。下面是网上的总结佳作，拿来学习学习。原文出处： zhili 的博客（@天平Learning） 
+也可参考自己CSDN博客整理：最全设计模式导学目录（完整版），前面几篇学的是java语言的，语法上稍微与C#有点不同，于是再找到此篇文章。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#设计模式总结">
+<meta property="og:url" content="http://fml710.xyz/2015/07/14/C-设计模式总结/index.html">
+<meta property="og:site_name" content="小勇blog">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;学习C#编程也有一段时间了，对于面向对象语言编程，我认为不能不知道设计模式。下面是网上的总结佳作，拿来学习学习。原文出处： zhili 的博客（@天平Learning） 
+也可参考自己CSDN博客整理：最全设计模式导学目录（完整版），前面几篇学的是java语言的，语法上稍微与C#有点不同，于是再找到此篇文章。">
+<meta property="og:image" content="http://i.imgur.com/jKDoEtZ.gif">
+<meta property="og:image" content="http://i.imgur.com/s2jURfa.gif">
+<meta property="og:image" content="http://i.imgur.com/kWmJ9O9.gif">
+<meta property="og:image" content="http://i.imgur.com/zyrRFDa.jpg">
+<meta property="og:image" content="http://i.imgur.com/iRGJT0j.jpg">
+<meta property="og:updated_time" content="2015-07-14T06:45:29.734Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C#设计模式总结">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;学习C#编程也有一段时间了，对于面向对象语言编程，我认为不能不知道设计模式。下面是网上的总结佳作，拿来学习学习。原文出处： zhili 的博客（@天平Learning） 
+也可参考自己CSDN博客整理：最全设计模式导学目录（完整版），前面几篇学的是java语言的，语法上稍微与C#有点不同，于是再找到此篇文章。">
+  
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
   
 </head>
 
 <body>
-  <header id="header" class="inner"><nav>
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-      <li><a href="/about">About</a></li>
-    
-      <li><a href="Read More">excerpt_link</a></li>
-    
-  </ul>
-</nav></header>
-  <div id="content" class="inner"><article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">小勇blog</a></h1>
+    <p><a href="/">新的开始，Be Better Tomorrow！</a></p>
   </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/reading">Reading</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
   <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/07/14/C-设计模式总结/">
+  <time datetime="2015-07-14T03:16:20.000Z">
+    7月 14 2015
+  </time>
+</a>
+    
     
   
     <h1 class="title">C#设计模式总结</h1>
   
 
-    <time datetime="2015-07-14T03:16:20.000Z">
-  <span class="day">14</span><span class="month">Jul</span>
-</time>
   </header>
-  <div class="entry-content">
+  
+  <div class="entry">
     
       <p>&emsp;&emsp;学习C#编程也有一段时间了，对于面向对象语言编程，我认为不能不知道设计模式。下面是网上的总结佳作，拿来学习学习。原文出处： <a href="http://www.cnblogs.com/zhili/p/DesignPatternSummery.html" target="_blank" rel="external">zhili 的博客（@天平Learning）</a> </p>
 <p>也可参考自己CSDN博客整理：<a href="http://blog.csdn.net/bigpudding24/article/details/45307373" target="_blank" rel="external">最全设计模式导学目录（完整版）</a>，前面几篇学的是java语言的，语法上稍微与C#有点不同，于是再找到此篇文章。<a id="more"></a></p>
@@ -144,49 +165,62 @@
 <p>PS： 很多论坛都看到初学者问，WCF现在还有没有必要深入学之类的问题，因为他们觉得这些技术可能会过时，说不定到时候微软又推出了一个新的SOA的实现方案了，那岂不是白花时间深入学了，所以就觉得没必要深入去学，知道用就可以了。对于这个问题，我之前也有这样同样的感觉，但是现在我觉得，尽管WCF技术可能会被替换，但深入了解一门技术，重点不是知道一些更高深API的调用啊，而是了解它的实现机制和思维方式，即使后面这个技术被替代了，其背后机制也肯定是相似的。所以深入了解了一个技术，你就会感觉新的技术熟悉，对其感觉放松。并且，你深入了解完一门技术之后，你面试时也敢说你很好掌握了这门技术，而不至于说平时使用的很多，一旦深入问时却不知道背后实现原理。这也是我要写WCF系列的原因。希望这点意见对一些初学者有帮助。</p>
 
     
-    
-    <footer class="meta">
-      
-      
-      
-    </footer>
-    
   </div>
-  
-</article></div>
-  <footer id="footer" class="inner"><div class="social alignright">
-  
-  
-  
-  
-  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+  <footer>
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div class="ds-thread" data-title="C#设计模式总结">
+  </div>
+</section>
 </div>
-<p>
+  </div>
+  <footer id="footer"><div class="copyright">
   
-  &copy; 2015 小勇
+  &copy; 2015 <a href="/">小勇</a>
   
-</p>
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
 <div class="clearfix"></div></footer>
-  <script src="/js/jquery.imagesloaded.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'fml710' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
 
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
 </script>
 
-
-<div id="phasebeam">
-  <canvas></canvas>
-  <canvas></canvas>
-  <canvas></canvas>
-</div>
-<script src="/js/phasebeam.js"></script>
 </body>
 </html>
